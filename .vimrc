@@ -1,0 +1,48 @@
+set hlsearch
+set autoindent
+set number
+set ignorecase
+set incsearch
+set laststatus=2
+set cursorline
+set cursorcolumn
+set shiftwidth=2
+set showcmd
+set showmatch
+set nobackup
+set noswapfile
+set autoread
+set hidden
+set background=dark
+
+set listchars=tab:^\ ,trail:~
+set smartindent
+set shiftwidth=2
+set softtabstop=2
+
+inoremap <silent> jj <ESC>
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
+inoremap < <><LEFT>
+nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap J 10<Down>
+nnoremap K 10<Up>
+nnoremap H 0
+nnoremap L $
+syntax enable
+colorscheme hybrid
+call plug#begin()
+  Plug 'https://github.com/preservim/nerdtree'
+call plug#end()
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+if has('vim_starting')
+    let &t_SI .= "\e[5 q"
+    let &t_EI .= "\e[0 q"
+    let &t_SR .= "\e[4 q"
+endif
+
