@@ -1,0 +1,41 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "editor.autoSurround": "brackets",
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "window.zoomLevel": -1,
+    "remote.SSH.remotePlatform": {
+        "aicon-a100-": "linux",
+        "aicon-a100": "linux"
+    },
+    
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {"before": ["H"], "after": ["0"]},
+        {"before": ["L"], "after": ["$"]},
+        {"before": ["J"], "after": ["1", "0", "j"]},
+        {"before": ["K"], "after": ["1", "0", "k"]},
+        {"before": ["U"], "after": ["C-r"]},
+        {"before": ["d"], "after": ["\"", "_", "d"]},
+        {"before": ["d", "d"], "after": ["\"", "_", "d", "d"]},
+    ],
+    "editor.parameterHints.enabled": false,
+    "editor.hover.enabled": false,
+    
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {"before": ["H"], "after": ["0"]},
+        {"before": ["L"], "after": ["$"]},
+        {"before": ["J"], "after": ["1", "0", "j"]},
+        {"before": ["K"], "after": ["1", "0", "k"]},
+        {"before": ["d"], "after": ["\"", "_", "d"]},
+        {"before": ["d", "d"], "after": ["\"", "_", "d", "d"]},
+    ]
+}
