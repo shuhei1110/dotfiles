@@ -46,17 +46,3 @@ if has('vim_starting')
     let &t_EI .= "\e[0 q"
     let &t_SR .= "\e[4 q"
 endif
-
-inoremap <silent> <BS> <C-\><C-O>:lua DelPair()<CR>
-
-function! DelPair()
-    let char_before = getline('.')[col('.') - 2]
-        let char_after = getline('.')[col('.') - 1]
-	    let pairs = {'"': '"', "'": "'", '(': ')', '[': ']', '{': '}'}
-	        
-	        if has_key(pairs, char_before) && pairs[char_before] == char_after
-        return "\<BS>\<BS>"
-	    else
-	              return "\<BS>"
-		          endif
-			  endfunction
