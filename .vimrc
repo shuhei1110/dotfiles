@@ -29,6 +29,7 @@ inoremap " ""<LEFT>
 inoremap < <><LEFT>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap U <C-r>
 nnoremap J 10<Down>
 nnoremap K 10<Up>
 nnoremap H 0
@@ -45,4 +46,3 @@ if has('vim_starting')
     let &t_EI .= "\e[0 q"
     let &t_SR .= "\e[4 q"
 endif
-
