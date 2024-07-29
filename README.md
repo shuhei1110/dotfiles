@@ -72,7 +72,10 @@ $ vim
 | :tabnew       | 新しいタブを開く                                                                           |
 | gt            | タブを移動                                                                                 |
 | g Shift+t     | タブを逆方向に移動                                                                         |
-| dd            | 1行削除                                                                                     |
+| dd            | 1行削除                                                                                    |
+| diw           | 単語削除                                                                                   |
+| diW           | 文全体を削除                                                                               |
+| di)           | )までを削除                                                                                |
 
 ### NERDTree Command
 
