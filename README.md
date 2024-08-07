@@ -76,6 +76,8 @@ $ vim
 | diw           | 単語削除                                                                                   |
 | diW           | 文全体を削除                                                                               |
 | di)           | )までを削除                                                                                |
+| dt)           | カーソルから)までを削除                                                                    |
+| :s/hoge/fuga/g| hogeをfugaに変更                                                                           |
 
 ### NERDTree Command
 
