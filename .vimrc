@@ -32,8 +32,16 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap U <C-r>
 nnoremap J 10<Down>
 nnoremap K 10<Up>
+nnoremap fh 10<Left>
 nnoremap H 0
+nnoremap fl 10<Right>
 nnoremap L $
+vnoremap J 10<Down>
+vnoremap K 10<Up>
+vnoremap fh 10<Left>
+vnoremap H 0
+vnoremap fl 10<Right>
+vnoremap L $
 syntax enable
 colorscheme hybrid
 call plug#begin()
