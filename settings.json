@@ -20,7 +20,9 @@
 
     "vim.normalModeKeyBindingsNonRecursive": [
         {"before": ["H"], "after": ["0"]},
+        {"before": ["f", "h"], "after": ["1", "0", "h"]},
         {"before": ["L"], "after": ["$"]},
+        {"before": ["f", "l"], "after": ["1", "0", "l"]},
         {"before": ["J"], "after": ["1", "0", "j"]},
         {"before": ["K"], "after": ["1", "0", "k"]},
         {"before": ["U"], "after": ["C-r"]},
@@ -32,10 +34,13 @@
     
     "vim.visualModeKeyBindingsNonRecursive": [
         {"before": ["H"], "after": ["0"]},
+        {"before": ["f", "h"], "after": ["1", "0", "h"]},
         {"before": ["L"], "after": ["$"]},
+        {"before": ["f", "l"], "after": ["1", "0", "l"]},
         {"before": ["J"], "after": ["1", "0", "j"]},
         {"before": ["K"], "after": ["1", "0", "k"]},
-        {"before": ["d"], "after": ["\"", "_", "d"]},
+        {"before": ["d", "f"], "after": ["\"", "_", "d"]},
         {"before": ["d", "d"], "after": ["\"", "_", "d", "d"]},
-    ]
+    ],
+
 }
