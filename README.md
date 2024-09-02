@@ -78,6 +78,9 @@ $ vim
 | di)           | )までを削除                                                                                |
 | dt)           | カーソルから)までを削除                                                                    |
 | :s/hoge/fuga/g| hogeをfugaに変更                                                                           |
+| :term         | ターミナルを開く                                                                           |
+| :w !sudo tee % > /dev/null| sudoでファイルを保存                                                           |
+| :!ls          | Shellコマンドを実行                                                                        |
 
 ### NERDTree Command
 
