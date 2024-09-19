@@ -56,8 +56,75 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# Define color and format variables
+FMT_BOLD="\[\e[1m\]"
+FMT_DIM="\[\e[2m\]"
+FMT_RESET="\[\e[0m\]"
+FMT_UNBOLD="\[\e[22m\]"
+FMT_UNDIM="\[\e[22m\]"
+
+FG_BLACK="\[\e[30m\]"
+FG_BLUE="\[\e[34m\]"
+FG_CYAN="\[\e[36m\]"
+FG_GREEN="\[\e[32m\]"
+FG_GREY="\[\e[37m\]"
+FG_MAGENTA="\[\e[35m\]"
+FG_RED="\[\e[31m\]"
+FG_WHITE="\[\e[97m\]"
+
+BG_BLACK="\[\e[40m\]"
+BG_BLUE="\[\e[44m\]"
+BG_CYAN="\[\e[46m\]"
+BG_GREEN="\[\e[42m\]"
+BG_MAGENTA="\[\e[45m\]"
+BG_RED="\[\e[41m\]"
+
+# Git branch and status background color
+parse_git_bg() {
+  [[ $(git status -s 2> /dev/null) ]] && echo -e "\e[43m" || echo -e "\e[42m"
+}
+
+# Git branch and status text color
+parse_git_fg() {
+  [[ $(git status -s 2> /dev/null) ]] && echo -e "\e[33m" || echo -e "\e[32m"
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  # Combine PS1 prompt with user-provided information
+  PS1="\n${FG_BLUE}╭─" # Begin arrow to prompt
+
+  # Add username, hostname, and OS icon container
+  PS1+="${FG_MAGENTA}" # Begin USERNAME container
+  PS1+="${BG_MAGENTA}${FG_CYAN}${FMT_BOLD} " # OS icon (or any other symbol)
+  PS1+="${FG_WHITE}\u@\h" # Add username and hostname
+  PS1+="${FMT_UNBOLD} ${FG_MAGENTA}${BG_BLUE} " # End USERNAME container / Begin DIRECTORY container
+
+  # Add directory container and print directory
+  PS1+="${FG_GREY}\w " # Print current directory
+  PS1+="${FG_BLUE}${BG_CYAN} " # End DIRECTORY container / Begin FILES container
+
+  # Add files, folders, and symlinks count
+  # PS1+="${FG_BLACK}"
+  # PS1+="Dir \$(find . -mindepth 1 -maxdepth 1 -type d | wc -l) " # Folder count
+  # PS1+="File \$(find . -mindepth 1 -maxdepth 1 -type f | wc -l) " # File count
+  # PS1+="Sl \$(find . -mindepth 1 -maxdepth 1 -type l | wc -l) " # Symlink count
+
+  # Reset format and colors before git info
+  PS1+="${FMT_RESET}${FG_CYAN}"
+
+  # Check if git branch exists, add git branch container
+  PS1+="\$(git branch 2> /dev/null | grep '^*' | colrm 1 2 | xargs -I BRANCH echo -n \""
+  PS1+="\$(parse_git_bg) " # End FILES container / Begin BRANCH container
+  PS1+="${FG_WHITE}(BRANCH)" # Print current git branch
+  PS1+="${FMT_RESET}\$(parse_git_fg)\")\n" # End last container
+
+  # Final arrow and prompt symbol
+  PS1+="${FG_BLUE}╰─ " # End arrow to prompt
+  PS1+="${FG_CYAN}\\$ " # Print prompt symbol ($ or # for root)
+  PS1+="${FMT_RESET}" # Reset formatting and colors
+
+  # Export the prompt
+  export PS1
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -141,10 +208,10 @@ if ! shopt -oq posix; then
 fi
 
 # CapsLock -> Zenkaku/Hankaku
-xmodmap | grep "Caps_Lock" | grep "mod1" > /dev/null 2>&1
+# xmodmap | grep "Caps_Lock" | grep "mod1" > /dev/null 2>&1
 
-if [ $? == 0 ]; then
+# if [ $? == 0 ]; then
 
-xmodmap ~/.Xmodmap
+# xmodmap ~/.Xmodmap
 
-fi
+# fi
