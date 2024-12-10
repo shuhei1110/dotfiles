@@ -1,0 +1,91 @@
+[
+// サイドバー開閉
+	{
+		"key": "ctrl+e",
+		"command": "workbench.explorer.fileView.focus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "workbench.action.toggleSidebarVisibility",
+		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+	},
+    {
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+// エディタ間のフォーカス移動
+	{
+		"key": "ctrl+h",
+		"command": "-editor.action.startFindReplaceAction",
+		"when": "editorFocus || editorIsOpen"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-testing.toggleTestingPeekHistory",
+		"when": "testing.isPeekVisible"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.focusAboveGroup"
+	},
+	{
+		"key": "ctrl+k ctrl+up",
+		"command": "-workbench.action.focusAboveGroup"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.focusBelowGroup"
+	},
+	{
+		"key": "ctrl+k ctrl+down",
+		"command": "-workbench.action.focusBelowGroup"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.focusRightGroup"
+	},
+	{
+		"key": "ctrl+k ctrl+right",
+		"command": "-workbench.action.focusRightGroup"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.focusLeftGroup"
+	},
+	{
+		"key": "ctrl+k ctrl+left",
+		"command": "-workbench.action.focusLeftGroup"
+	},
+	// エクスプローラー内操作
+	{
+		"key": "j",
+		"command": "list.focusDown",
+		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+	},
+	{
+		"key": "k",
+		"command": "list.focusUp",
+		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+	},
+	// multi-command ryuta46.multi-command 必須
+	{
+    	"key": "shift+j",
+    	"command": "multiCommand.focusDown5",
+    	"when": "explorerViewletFocus && listFocus && explorerViewletVisible && !inputFocus"
+	},
+	{
+		"key": "shift+k",
+		"command": "multiCommand.focusUp5",
+		"when": "explorerViewletFocus && listFocus && explorerViewletVisible && !inputFocus"
+	},
+	{
+		"key": "o",
+		"command": "list.toggleExpand",
+		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+	},
+	{
+		"key": "r",
+		"command": "workbench.files.action.refreshFilesExplorer",
+		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+	},
+]
