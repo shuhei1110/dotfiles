@@ -115,12 +115,17 @@ $ vim
      - vim keybind
      - multi-commnad
  
-- keybinds.json
+- keybindings.json
      - tmux keybind
  
 - Following extensions are required
      - vim:vscodevim.vim
      - multi-commnad:ryuta46.multi-command
+ 
+- keybindings.json setting
+     1. File
+     2. User settings
+     3. Keyboard shortcut
 
 
 
