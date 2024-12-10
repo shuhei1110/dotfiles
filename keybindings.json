@@ -88,14 +88,34 @@
 		"command": "workbench.files.action.refreshFilesExplorer",
 		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
 	},
-		// terminal
+	// terminal
 	{
-	        "key": "ctrl+m",
-	        "command": "workbench.action.terminal.focus"
+        	"key": "ctrl+m",
+        	"command": "workbench.action.terminal.focus"
+    	},
+    	{
+        	"key": "ctrl+m",
+        	"command": "workbench.action.focusActiveEditorGroup",
+        	"when": "terminalFocus"
+    	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.terminal.focusPrevious",
+		"when": "terminalFocus"
 	},
 	{
-	        "key": "ctrl+m",
-	        "command": "workbench.action.focusActiveEditorGroup",
-	        "when": "terminalFocus"
+		"key": "ctrl+j",
+		"command": "workbench.action.terminal.focusNext",
+		"when": "terminalFocus"
 	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	}
 ]
