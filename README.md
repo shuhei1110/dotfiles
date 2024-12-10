@@ -10,6 +10,8 @@ How to use each tools
 
 ## [zsh](#zsh)
 
+## [vscode](#vscode)
+
 * * * 
 
 ## ><a id="vim"></a>vim
@@ -107,6 +109,18 @@ $ vim
 ## ><a id="bash"></a>bash
 
 ## ><a id="zsh"></a>zsh
+
+## ><a id="vscode"></a>vscoode
+- settings.json
+     - vim keybind
+     - multi-commnad
+ 
+- keybinds.json
+     - tmux keybind
+ 
+- Following extensions are required
+     - vim:vscodevim.vim
+     - multi-commnad:ryuta46.multi-command
 
 
 
