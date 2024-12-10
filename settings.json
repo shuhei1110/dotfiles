@@ -6,9 +6,35 @@
     "window.zoomLevel": -1,
     "remote.SSH.remotePlatform": {
         "aicon-a100-": "linux",
-        "aicon-a100": "linux"
+        "aicon-a100": "linux",
+        "ssm-smaope-t4": "linux",
+        "aws-aicon-yoshida": "linux"
     },
-    
+
+    // エクスプローラー操作用のキーバインド自作関数
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.focusDown5",
+            "sequence": [
+                "list.focusDown",
+                "list.focusDown",
+                "list.focusDown",
+                "list.focusDown",
+                "list.focusDown",
+            ]
+        },
+        {
+            "command": "multiCommand.focusUp5",
+            "sequence": [
+                "list.focusUp",
+                "list.focusUp",
+                "list.focusUp",
+                "list.focusUp",
+                "list.focusUp",
+            ]
+        },
+    ],
+
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
@@ -29,8 +55,6 @@
         {"before": ["d"], "after": ["\"", "_", "d"]},
         {"before": ["d", "d"], "after": ["\"", "_", "d", "d"]},
     ],
-    "editor.parameterHints.enabled": false,
-    "editor.hover.enabled": false,
     
     "vim.visualModeKeyBindingsNonRecursive": [
         {"before": ["H"], "after": ["0"]},
@@ -42,5 +66,15 @@
         {"before": ["d", "f"], "after": ["\"", "_", "d"]},
         {"before": ["d", "d"], "after": ["\"", "_", "d", "d"]},
     ],
+    "editor.quickSuggestions": {
+        "strings": "on",
+        "comments": "on"
+    },
+    "dev.containers.executeInWSL": true,
+    "dev.containers.executeInWSLDistro": "Ubuntu",
+    "notebook.lineNumbers": "on",
+    "@azure.argTenant": "bb4fa01c-5da9-44f5-b082-8718ce8bf0a9",
+    "chat.editing.alwaysSaveWithGeneratedChanges": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
 
 }
