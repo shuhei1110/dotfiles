@@ -88,4 +88,14 @@
 		"command": "workbench.files.action.refreshFilesExplorer",
 		"when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
 	},
+		// terminal
+	{
+	        "key": "ctrl+m",
+	        "command": "workbench.action.terminal.focus"
+	},
+	{
+	        "key": "ctrl+m",
+	        "command": "workbench.action.focusActiveEditorGroup",
+	        "when": "terminalFocus"
+	},
 ]
