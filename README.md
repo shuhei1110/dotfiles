@@ -83,6 +83,8 @@ $ vim
 | :term         | ターミナルを開く                                                                           |
 | :w !sudo tee % > /dev/null| sudoでファイルを保存                                                           |
 | :!ls          | Shellコマンドを実行                                                                        |
+| "             | register                                                                                   |
+| "np           | paste using register                                                                                   |
 
 ### NERDTree Command
 

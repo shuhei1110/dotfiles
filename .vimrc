@@ -43,7 +43,6 @@ vnoremap H 0
 vnoremap fl 10<Right>
 vnoremap L $
 syntax enable
-colorscheme hybrid
 call plug#begin()
   Plug 'https://github.com/preservim/nerdtree'
 call plug#end()
